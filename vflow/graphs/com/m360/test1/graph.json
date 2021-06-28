@@ -1,7 +1,7 @@
 {
     "properties": {},
     "iconsrc": "satellite.svg",
-    "description": "Data Generator Test 1 - rev a",
+    "description": "Data Generator Test 1 - rev b",
     "processes": {
         "1mnu": {
             "component": "com.sap.util.terminal",
