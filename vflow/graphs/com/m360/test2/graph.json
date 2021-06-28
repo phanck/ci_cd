@@ -1,0 +1,98 @@
+{
+    "iconsrc": "satellite.svg",
+    "properties": {},
+    "description": "Message Generator doh",
+    "processes": {
+        "messagegenerator1": {
+            "component": "com.sap.util.dataMessageGenerator",
+            "metadata": {
+                "label": "Message Generator",
+                "x": -212,
+                "y": -2,
+                "height": 80,
+                "width": 120,
+                "extensible": true,
+                "config": {}
+            }
+        },
+        "terminal1": {
+            "component": "com.sap.util.terminal",
+            "metadata": {
+                "label": "Terminal",
+                "x": 293.9999990463257,
+                "y": 12,
+                "height": 80,
+                "width": 120,
+                "ui": "dynpath",
+                "config": {}
+            }
+        },
+        "tostringconverter1": {
+            "component": "com.sap.util.toStringConverter",
+            "metadata": {
+                "label": "ToString Converter",
+                "x": 195.99999904632568,
+                "y": 27,
+                "height": 50,
+                "width": 50,
+                "config": {}
+            }
+        },
+        "wiretap1": {
+            "component": "com.sap.util.wiretap",
+            "metadata": {
+                "label": "Wiretap",
+                "x": -19,
+                "y": -2,
+                "height": 80,
+                "width": 120,
+                "ui": "dynpath",
+                "config": {}
+            }
+        }
+    },
+    "groups": [],
+    "connections": [
+        {
+            "metadata": {
+                "points": "249.99999904632568,52 289.9999990463257,52"
+            },
+            "src": {
+                "port": "outstring",
+                "process": "tostringconverter1"
+            },
+            "tgt": {
+                "port": "in1",
+                "process": "terminal1"
+            }
+        },
+        {
+            "metadata": {
+                "points": "-88,38 -24,38"
+            },
+            "src": {
+                "port": "output",
+                "process": "messagegenerator1"
+            },
+            "tgt": {
+                "port": "in",
+                "process": "wiretap1"
+            }
+        },
+        {
+            "metadata": {
+                "points": "105,38 148,38 148,61 190.99999904632568,61"
+            },
+            "src": {
+                "port": "out",
+                "process": "wiretap1"
+            },
+            "tgt": {
+                "port": "inmessage",
+                "process": "tostringconverter1"
+            }
+        }
+    ],
+    "inports": {},
+    "outports": {}
+}

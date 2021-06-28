@@ -1,0 +1,50 @@
+{
+    "properties": {},
+    "iconsrc": "satellite.svg",
+    "description": "Data Generator",
+    "processes": {
+        "1mnu": {
+            "component": "com.sap.util.terminal",
+            "metadata": {
+                "label": "terminal (1mnu)",
+                "x": 181,
+                "y": 12,
+                "height": 80,
+                "width": 120,
+                "ui": "components/iot/terminal/",
+                "icon": "file-o",
+                "config": {}
+            }
+        },
+        "datagenerator1": {
+            "component": "com.sap.util.dataGenerator",
+            "metadata": {
+                "label": "Data Generator",
+                "x": 12,
+                "y": 12,
+                "height": 80,
+                "width": 120,
+                "extensible": true,
+                "config": {}
+            }
+        }
+    },
+    "groups": [],
+    "connections": [
+        {
+            "metadata": {
+                "points": "136,52 176,52"
+            },
+            "src": {
+                "port": "output",
+                "process": "datagenerator1"
+            },
+            "tgt": {
+                "port": "in1",
+                "process": "1mnu"
+            }
+        }
+    ],
+    "inports": {},
+    "outports": {}
+}
